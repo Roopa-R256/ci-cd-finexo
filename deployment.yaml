@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ci-cd-finexo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ci-cd-finexo
+  template:
+    metadata:
+      labels:
+        app: ci-cd-finexo
+    spec:
+      containers:
+      - name: ci-cd-finexo
+        image: roopar2567/ci-cd-finexo:latest
+        ports:
+        - containerPort: 80
